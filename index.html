@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Repeater</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="logo.png" alt="logo">
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="heading">
+                <p class="xxl">Text Repeater</p>
+                <p class="xl">Multiply "I love you ❤️", send it to your crush, and let the magic happen...</p>
+            </div>
+            <div class="io">
+                <!-- Input Section -->
+                <div class="inputbox">
+                    <div class="up">
+                        <p class="showi">Text to repeat</p>
+                        <button class="clrinput">Clear Input</button>
+                    </div>
+                    <div class="mibox">
+                        <textarea id="inp" placeholder="Input the text worth repeating"></textarea>
+                    </div>
+
+                    <div class="inputsettings">
+                        <label for="addline">
+                            <input type="checkbox" id="addline"> Add line
+                        </label>
+                        <label for="addspace">
+                            <input type="checkbox" id="addspace"> Add space
+                        </label>
+                    </div>
+                    <div class="repeater">
+                        <p class="showr">Enter number to repeat:</p>
+                        <input type="number" id="repeatCount" class="repeaternum" min="1" required>
+                    </div>
+
+                    <div class="submiit">
+                        <button id="repeatButton" type="submit">Repeat Text</button>
+                    </div>
+                </div>
+
+                <!-- Output Section -->
+                <div class="outputbox">
+                    <div class="up">
+                        <p class="showo">Output</p>
+                        <button class="cpyoutput">Copy Output</button>
+                    </div>
+                    <div class="mioutput">
+                        <textarea id="output" placeholder="Your output will be displayed here" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="description">
+            <div class="dtop">
+                <i class='bx bxs-notepad'></i>
+                <p class="drcp">About this tool</p>
+            </div>
+            <ul>
+                <li>Our text repeater tool is easy to use and requires no login or signup.</li>
+                <li>Simply enter the text you want to repeat and specify the number of repetitions.</li>
+                <li>Customize your output with options to add lines or spaces between repetitions.</li>
+                <li>Instantly generate repeated text and copy it with a single click.</li>
+                <li>Our tool is fast, reliable, and accessible from any device.</li>
+                <li>Enjoy a seamless experience with our user-friendly interface.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear());</script> Retro Softwares, Inc. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputTextarea = document.getElementById("inp");
+            const outputTextarea = document.getElementById("output");
+            const clearInputButton = document.querySelector(".clrinput");
+            const copyOutputButton = document.querySelector(".cpyoutput");
+            const addLineCheckbox = document.getElementById("addline");
+            const addSpaceCheckbox = document.getElementById("addspace");
+            const repeatCountInput = document.getElementById("repeatCount");
+            const repeatButton = document.getElementById("repeatButton");
+
+            // Clear input field
+            clearInputButton.addEventListener("click", () => {
+                inputTextarea.value = "";
+            });
+
+            // Repeat text functionality
+            repeatButton.addEventListener("click", () => {
+                const textToRepeat = inputTextarea.value.trim();
+                const repeatCount = parseInt(repeatCountInput.value, 10);
+                const addLine = addLineCheckbox.checked;
+                const addSpace = addSpaceCheckbox.checked;
+
+                if (!textToRepeat) {
+                    alert("Please enter some text to repeat!");
+                    return;
+                }
+
+                if (isNaN(repeatCount) || repeatCount < 1) {
+                    alert("Please enter a valid number greater than 0 for repetitions!");
+                    return;
+                }
+
+                let repeatedText = "";
+                for (let i = 0; i < repeatCount; i++) {
+                    repeatedText += textToRepeat;
+                    if (addLine && i !== repeatCount - 1) repeatedText += "\n";
+                    if (addSpace && i !== repeatCount - 1) repeatedText += " ";
+                }
+
+                outputTextarea.value = repeatedText;
+            });
+
+            // Copy output to clipboard
+            copyOutputButton.addEventListener("click", () => {
+                const outputText = outputTextarea.value.trim();
+                if (!outputText) {
+                    alert("No output to copy!");
+                    return;
+                }
+                navigator.clipboard.writeText(outputText).then(() => {
+                    alert("Output copied to clipboard!");
+                }).catch(() => {
+                    alert("Failed to copy text. Try again.");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

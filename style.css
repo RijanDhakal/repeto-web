@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+}
+
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    
+}
+
+nav {
+    width: 100vw;
+    height: 18vh;
+    background-color: #c2c9eb; /* For a dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.logo {
+    /* line-height: 5vh; */
+    margin-top: 45px;
+    width: 350px;
+    height: 250px;
+}
+
+.container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.heading .xxl {
+    font-size: 40px;
+    font-weight: 550;
+    color: black;
+}
+
+.heading .xl {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.io {
+    display: flex;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    gap: 3vw;
+}
+
+.inputbox {
+    position: relative;
+    width: 48%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+}
+
+.outputbox {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+}
+
+.mioutput textarea {
+    padding: 1vw;
+    margin-top: 2vh;
+    /* margin-bottom: 1vh; */
+    width: 550px;
+    height: 38vh;
+    resize: vertical;
+    overflow: auto;
+
+}
+.mibox textarea{
+    padding: 1vw;
+    margin-top: 2vh;
+    /* margin-bottom: 1vh; */
+    width: 550px;
+    height: 25vh;
+    resize: vertical;
+    overflow: auto;
+}
+
+.up {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between child elements */
+    width: 100%; /* Ensure the container takes the full width */
+}
+
+.showi,
+.showo {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.inputsettings {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 100px;
+    top: 278px;
+    color: black;
+    gap: 1vh;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.repeater {
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+.repeaternum{
+    height: 30px;
+}
+
+.showr {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.repeaternum {
+    text-align: center;
+}
+
+.submiit button {
+    color: white;
+    font-size: 20px;
+    font-family: "orbitron";
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color: blue;
+    height: 35px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.submiit button:hover {
+    border: 2px solid black;
+    background-color: rgb(3, 46, 111);
+    cursor: pointer;
+}
+
+.clrinput,
+.cpyoutput {
+    color: white;
+    background-color: rgb(3, 46, 111);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.description{
+    width: 80vw;
+    margin: auto;
+}
+.dtop{
+    display: flex;
+}
+.drcp{
+    font-size: 28px;
+    font-weight: bold;
+}
+.bx{
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: 700;
+}
+ul{
+    margin-top: 1vh;
+    margin-left: 2vw;
+    font-size: 20px;
+    font-weight: 300;
+}
+.footer{
+    width: 100vw;
+    height: 8vh;
+    background-color: #2A3B8F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
